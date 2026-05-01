@@ -8,14 +8,14 @@ pre : " <b> 4.2. </b> "
 
 **Thiết kế kiến trúc:** Hệ thống theo mô hình 3-tier gồm tầng web (EC2), tầng dữ liệu (RDS) và tầng lưu trữ (S3). Có sơ đồ mô tả luồng dữ liệu. 
 
-![architecture](/images/5-Workshop/5.2-Architecture/architecture.png)
+![architecture](../../../images/5-Workshop/5.2-Architecture/architecture.png)
 
 Dịch vụ sử dụng: 
 - EC2: Chạy ứng dụng PHP 
 - RDS: Database MySQL 
 - S3: Lưu file tĩnh 
 
-![server](/images/5-Workshop/5.2-Architecture/server.png)
+![server](../../../images/5-Workshop/5.2-Architecture/server.png)
 
 Lý do lựa chọn: Dễ triển khai, có managed service, chi phí hợp lý và phù hợp web truyền thống. 
 Bảo mật & IAM: 

@@ -31,18 +31,18 @@ Tạo 1 server trên Amazon Web Services để:
 <br>Khởi động và đặt tên cho instance
 <br>Name: classic-groove-server
 
-![launch-ec2](/images/5-Workshop/5.3-Implementation/launch-ec2.png)
+![launch-ec2](../../../../images/5-Workshop/5.3-Implementation/launch-ec2.png)
 
 
 3. Chọn hệ điều hành (QUAN TRỌNG)
 <br>Chọn: Amazon Linux 2
 
-![ami](/images/5-Workshop/5.3-Implementation/ami.png)
+![ami](../../../../images/5-Workshop/5.3-Implementation/ami.png)
 
 4. Chọn cấu trúc máy
 <br>**Instance type**: t3.micro; Free tier (không tốn tiền)
 
-![instance-type-ec2](/images/5-Workshop/5.3-Implementation/instance-type-ec2.png)
+![instance-type-ec2](../../../../images/5-Workshop/5.3-Implementation/instance-type-ec2.png)
 
 5. Tạo key (để SSH)
 - Click: **Create new key pair**
@@ -51,7 +51,7 @@ Tạo 1 server trên Amazon Web Services để:
 <br>&emsp; + Type: .pem <br>
 Download file về (Đây là file **QUAN TRỌNG** cần lưu ý cẩn thận).
 
-![key-pair](/images/5-Workshop/5.3-Implementation/key-pair.png)
+![key-pair](../../../../images/5-Workshop/5.3-Implementation/key-pair.png)
 
 6. Network settings
 * Tick:
@@ -64,7 +64,7 @@ Download file về (Đây là file **QUAN TRỌNG** cần lưu ý cẩn thận).
 AWS sẽ tự tạo Security Group cho bạn luôn
 
 
-![sg-auto](/images/5-Workshop/5.3-Implementation/sg-auto.png)
+![sg-auto](../../../../images/5-Workshop/5.3-Implementation/sg-auto.png)
 
 7. Storage
 Giữ nguyên: 8GB
@@ -73,7 +73,7 @@ Giữ nguyên: 8GB
 <br>Click: Launch Instance
 <br>Kết quả:
 
-![sucess](/images/5-Workshop/5.3-Implementation/sucess.png)
+![sucess](../../../../images/5-Workshop/5.3-Implementation/sucess.png)
 
 #### SSH + Install Apache + PHP
 
@@ -101,7 +101,7 @@ Ví dụ: ```ssh -i aws-key.pem ec2-user@<public-ip>```
 Bạn sẽ thấy: Trang Apache Test Page  => Nghĩa là: Server chạy web OK
 <br>Ví dụ: http://13.211.255.184
 
-![3-10](/images/5-Workshop/5.3-Implementation/3-10.png)
+![3-10](../../../../images/5-Workshop/5.3-Implementation/3-10.png)
 
 #### Upload code lên EC2
 
@@ -125,7 +125,7 @@ Quay lại EC2 (SSH)
 
 **Kết quả mong đợi:** Ứng dụng web được triển khai thành công và có thể truy cập thông qua địa chỉ IP công khai.
 
-![3-11](/images/5-Workshop/5.3-Implementation/3-11.png)
+![3-11](../../../../images/5-Workshop/5.3-Implementation/3-11.png)
 
 - **Tóm tắt**: Hệ thống đã sử dụng thành công Amazon EC2 làm máy chủ web để chạy ứng dụng PHP. EC2 được cấu hình với Apache và các thư viện cần thiết, cho phép triển khai và truy cập ứng dụng thông qua Public IP. Giải pháp này đảm bảo môi trường linh hoạt và có khả năng mở rộng cho hệ thống.
 
@@ -137,18 +137,18 @@ Create database → chọn Full configuration
 - Bước 1: Chọn engine
 <br>&emsp; + Engine options → Chọn MySQL
 
-![3-12](/images/5-Workshop/5.3-Implementation/3-12.png)
+![3-12](../../../../images/5-Workshop/5.3-Implementation/3-12.png)
 
 <br>&emsp; + Version → Giữ mặc định (không cần đổi)
 
 - Bước 2: Template (Chọn Free tier)
 
-![3-13](/images/5-Workshop/5.3-Implementation/3-13.png)
+![3-13](../../../../images/5-Workshop/5.3-Implementation/3-13.png)
 
 - Bước 3: DB Setting
 <br>&emsp; + DB instance identifier → Nhập: classic-groove-db
 
-![3-14](/images/5-Workshop/5.3-Implementation/3-14.png)
+![3-14](../../../../images/5-Workshop/5.3-Implementation/3-14.png)
 
 <br>&emsp; + Master username → Nhập: admin
 <br>&emsp; + Passwork → Tự đặt (ví dụ: 12345678)
@@ -162,16 +162,16 @@ Create database → chọn Full configuration
 <br>&emsp; + VPC security → Chọn: Create new
 <br>&emsp; + Tên Security Group → classic-groove-db-sg
 
-![3-15](/images/5-Workshop/5.3-Implementation/3-15.png)
+![3-15](../../../../images/5-Workshop/5.3-Implementation/3-15.png)
 
 - Bước 7: Additional config
 <br>&emsp; + Initial database name → Nhập: classic_groove
 
-![3-16](/images/5-Workshop/5.3-Implementation/3-16.png)
+![3-16](../../../../images/5-Workshop/5.3-Implementation/3-16.png)
 
 - Bước 8: Create: Kéo xuống dưới → chọn: Create database → Sau đó chờ 3-5 phút
 
-![3-17](/images/5-Workshop/5.3-Implementation/3-17.png)
+![3-17](../../../../images/5-Workshop/5.3-Implementation/3-17.png)
 
 [**Phần 2: Mở port database**]
 
@@ -179,7 +179,7 @@ Vào:
 - RDS → chọn DB
 - Click Security Group → **Edit inbound rules**
 
-![3-18](/images/5-Workshop/5.3-Implementation/3-18.png)
+![3-18](../../../../images/5-Workshop/5.3-Implementation/3-18.png)
 
 Thêm:
 
@@ -189,7 +189,7 @@ Thêm:
 
 Hoặc tạm thời: 0.0.0.0/0 (để test)
 
-![3-19](/images/5-Workshop/5.3-Implementation/3-19.png)
+![3-19](../../../../images/5-Workshop/5.3-Implementation/3-19.png)
 
 [**Phần 3: Connect từ EC2**]
 - Cài MySQL client
@@ -281,37 +281,37 @@ Mục tiêu khi user upload ảnh:
 + Bucket name: classic-groove-images
 + Object Ownership: Chọn ACLs disabled (recommended)
 
-![3-21-1](/images/5-Workshop/5.3-Implementation/3-21-1.png)
-![3-21-2](/images/5-Workshop/5.3-Implementation/3-21-1.png)
+![3-21-1](../../../../images/5-Workshop/5.3-Implementation/3-21-1.png)
+![3-21-2](../../../../images/5-Workshop/5.3-Implementation/3-21-1.png)
 
 3. Các cấu hình khác
 + Bucket Versioning: Disable
 + Encryption type: giữ mặc định (SSE-S3)
 + Bucket Key: Disable
 
-![3-22-1](/images/5-Workshop/5.3-Implementation/3-22-1.png)
-![3-22-2](/images/5-Workshop/5.3-Implementation/3-22-2.png)
+![3-22-1](../../../../images/5-Workshop/5.3-Implementation/3-22-1.png)
+![3-22-2](../../../../images/5-Workshop/5.3-Implementation/3-22-2.png)
 
 4. Nhấn **Create bucket**
 
-![3-23](/images/5-Workshop/5.3-Implementation/3-23.png)
+![3-23](../../../../images/5-Workshop/5.3-Implementation/3-23.png)
 
 Bước 2: Cấp quyền public
 Vào bucket → Permissions → Bucket policy (Tab Permissions của bucket classic-groove-images)
 
-![3-24](/images/5-Workshop/5.3-Implementation/3-24.png)
+![3-24](../../../../images/5-Workshop/5.3-Implementation/3-24.png)
 
 Nhấn vào Edit
 
-![3-25](/images/5-Workshop/5.3-Implementation/3-25.png)
+![3-25](../../../../images/5-Workshop/5.3-Implementation/3-25.png)
 
 Dán policy này:
 
-![3-26](/images/5-Workshop/5.3-Implementation/3-26.png)
+![3-26](../../../../images/5-Workshop/5.3-Implementation/3-26.png)
 
 Rồi bấm **Save changes**, nó sẽ hiện ra:
 
-![3-27](/images/5-Workshop/5.3-Implementation/3-27.png)
+![3-27](../../../../images/5-Workshop/5.3-Implementation/3-27.png)
 
 Bước 3: Tạo AWS Key
 
@@ -319,27 +319,27 @@ Bước 3: Tạo AWS Key
 2. Chọn User, rồi bấm Create User
 3. Nhập User name, rồi bấm Next
 
-![3-28](/images/5-Workshop/5.3-Implementation/3-28.png)
+![3-28](../../../../images/5-Workshop/5.3-Implementation/3-28.png)
 
 4. Chọn Attach policies directly → Sau đó, tìm và tick Attach policies directly
 
-![3-29-1](/images/5-Workshop/5.3-Implementation/3-29-1.png)
-![3-29-2](/images/5-Workshop/5.3-Implementation/3-29-2.png)
+![3-29-1](../../../../images/5-Workshop/5.3-Implementation/3-29-1.png)
+![3-29-2](../../../../images/5-Workshop/5.3-Implementation/3-29-2.png)
 
 5. Create user
 
-![3-30](/images/5-Workshop/5.3-Implementation/3-30.png)
+![3-30](../../../../images/5-Workshop/5.3-Implementation/3-30.png)
 
 6. Vào user vừa tạo
 - Nhấn tab Security credentials
 - Bấm: Create access key, sau đó tick **Application running outside AWS**
 - Bấm Next → Create
 
-![3-31](/images/5-Workshop/5.3-Implementation/3-31.png)
+![3-31](../../../../images/5-Workshop/5.3-Implementation/3-31.png)
 
 Copy AWS key (key sẽ được hiển thị một lần duy nhất ở màn hình này)
 
-![3-32](/images/5-Workshop/5.3-Implementation/3-32.png)
+![3-32](../../../../images/5-Workshop/5.3-Implementation/3-32.png)
 
 Bước 4: Kết nối PHP với Amazon S3
 1. Cài AWS SDK cho PHP
@@ -393,11 +393,11 @@ if(isset($_FILES['image'])){
 Thay YOUR-KEY, YOUR_SECRET bằng AWS key bạn vừa tạo ở Bước 3
 <br>**TEST NGAY:** Mở trình duyệt http://13.211.255.182/upload.php
 
-![3-33](/images/5-Workshop/5.3-Implementation/3-33.png)
+![3-33](../../../../images/5-Workshop/5.3-Implementation/3-33.png)
 
 Nó sẽ hiện trang trắng (Bình thường)
 
-![3-34](/images/5-Workshop/5.3-Implementation/3-34.png)
+![3-34](../../../../images/5-Workshop/5.3-Implementation/3-34.png)
 
 3. Tạo form Test Upload
 Tạo thêm file test.html:
@@ -410,11 +410,11 @@ Tạo thêm file test.html:
 Mở: http://13.211.255.184/test.html
 <br>Chọn ảnh rồi upload:
 
-![3-35](/images/5-Workshop/5.3-Implementation/3-35.png)
+![3-35](../../../../images/5-Workshop/5.3-Implementation/3-35.png)
 
 Kết quả: Nếu đúng sẽ trả về link: https://classic-groove-images.s3.ap-southeast-2.amazonaws.com/xxx.jpg
 
-![3-34](/images/5-Workshop/5.3-Implementation/3-34.png)
+![3-34](../../../../images/5-Workshop/5.3-Implementation/3-34.png)
 
 Bước 5: Gắn upload S3 vào project classic-groove
 - B5.1: Sửa form thêm album
@@ -518,6 +518,6 @@ Suy ra: User upload → S3 lưu file → PHP lấy URL → DB lưu URL → web l
 Khi upload thành công link trả về:
 https://classic-groove-images.s3.ap-southeast-2.amazonaws.com/xxx.jpg
 
-![3-35](/images/5-Workshop/5.3-Implementation/3-35.png)
+![3-35](../../../../images/5-Workshop/5.3-Implementation/3-35.png)
 
 **Tóm tắt:** Hệ thống đã tích hợp thành công Amazon S3 để lưu trữ hình ảnh. Các hình ảnh sau khi upload được lưu dưới dạng object trên S3 và truy cập thông qua URL công khai. Giải pháp này giúp loại bỏ việc lưu trữ trên server EC2, tăng khả năng mở rộng và cải thiện hiệu suất khi xử lý tài nguyên tĩnh trong hệ thống.

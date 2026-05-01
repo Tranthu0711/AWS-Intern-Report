@@ -30,17 +30,17 @@ Create a virtual server on Amazon Web Services to:
 2. Set Instance Name 
 - Name: classic-groove-server 
 
-![launch ec2](/images/5-Workshop/5.3-Implementation/launch-ec2.png)
+![launch ec2](../../../images/5-Workshop/5.3-Implementation/launch-ec2.png)
 
 3. Choose Operating System (Important) 
 Select: Amazon Linux 2 
 
-![ami](/images/5-Workshop/5.3-Implementation/ami.png)
+![ami](../../../images/5-Workshop/5.3-Implementation/ami.png)
 
 4. Choose Instance Type 
 - **Instance type:** t3.micro; Eligible for Free Tier (no cost) 
 
-![instance-type-ec2](/images/5-Workshop/5.3-Implementation/instance-type-ec2.png)
+![instance-type-ec2](../../../images/5-Workshop/5.3-Implementation/instance-type-ec2.png)
 
 5. Create Key Pair (for SSH access) 
 - Click: **Create new key pair**
@@ -49,7 +49,7 @@ Select: Amazon Linux 2
 <br>&emsp; Type: .pem 
 - Download the key file and store it securely (important for SSH access) 
 
-![key-pair](/images/5-Workshop/5.3-Implementation/key-pair.png)
+![key-pair](../../../images/5-Workshop/5.3-Implementation/key-pair.png)
 
 6. Configure Network Settings 
 - Enable: 
@@ -58,7 +58,7 @@ Select: Amazon Linux 2
 - SSH: Keep default setting (My IP) 
 - AWS will automatically create a Security Group 
 
-![sg-auto](/images/5-Workshop/5.3-Implementation/sg-auto.png)
+![sg-auto](../../../images/5-Workshop/5.3-Implementation/sg-auto.png)
 
 7. Configure Storage 
 - Keep default: 8 GB 
@@ -66,7 +66,7 @@ Select: Amazon Linux 2
 8. Launch Instance 
 - Click: Launch Instance
 
-![sucess](/images/5-Workshop/5.3-Implementation/sucess.png)
+![sucess](../../../images/5-Workshop/5.3-Implementation/sucess.png)
 
 #### SSH + Install Apache + PHP
 
@@ -82,7 +82,7 @@ Select: Amazon Linux 2
 
 Example: ```ssh -i aws-key.pem ec2-user@13.211.2555.184```
 
-![3-9](/images/5-Workshop/5.3-Implementation/3-9.png)
+![3-9](../../../images/5-Workshop/5.3-Implementation/3-9.png)
 
 2. Update the system
    
@@ -103,7 +103,7 @@ Open browser: http://public-ip
 **Expected result**: The Apache Test Page is displayed, indicating that the web server is running successfully.
 <br>Example: http://13.211.255.184
 
-![3-10](/images/5-Workshop/5.3-Implementation/3-10.png)
+![3-10](../../../images/5-Workshop/5.3-Implementation/3-10.png)
 
 #### Upload code to EC2
 
@@ -128,7 +128,7 @@ Return to the EC2 instance via SSH and deploy the application to the web root di
 
 **Expected result:** The web application is successfully deployed and accessible via the public IP address.
 
-![3-11](/images/5-Workshop/5.3-Implementation/3-11.png)
+![3-11](../../../images/5-Workshop/5.3-Implementation/3-11.png)
 
 - **Summary Session**: The system successfully utilizes Amazon EC2 as a web server to host the PHP application. The EC2 instance is configured with Apache and required dependencies, allowing the application to be deployed and accessed via public IP. This ensures a flexible and scalable environment for running the web application.
 
@@ -140,18 +140,18 @@ Create database → select **Full configuration**
 - Step 1: Select engine
 <br>&emsp; + Engine options → select MySQL
 
-![3-12](/images/5-Workshop/5.3-Implementation/3-12.png)
+![3-12](../../../images/5-Workshop/5.3-Implementation/3-12.png)
 
 <br>&emsp;+ Version → Keep default (no change required)
 
 - Step 2: Template (select Free tier)
 
-![3-13](/images/5-Workshop/5.3-Implementation/3-13.png)
+![3-13](../../../images/5-Workshop/5.3-Implementation/3-13.png)
 
 - Step 3: DB Setting
 <br>&emsp; + DB instance identifier → Enter: classic-groove-db
 
-![3-14](/images/5-Workshop/5.3-Implementation/3-14.png)
+![3-14](../../../images/5-Workshop/5.3-Implementation/3-14.png)
 
 <br>&emsp; + Master username → Enter: admin
 <br>&emsp; + Passwork → Set manually (example: 12345678)
@@ -163,17 +163,17 @@ Create database → select **Full configuration**
 <br>&emsp; + VPC security group → Select: **Create new**
 <br>&emsp; + Security Group name → classic-groove-db-sg
 
-![3-15](/images/5-Workshop/5.3-Implementation/3-15.png)
+![3-15](../../../images/5-Workshop/5.3-Implementation/3-15.png)
 
 - Step 7: Additional config
 <br>&emsp;+ Initial database name → Enter: classic_groove
 
-![3-16](/images/5-Workshop/5.3-Implementation/3-16.png)
+![3-16](../../../images/5-Workshop/5.3-Implementation/3-16.png)
 
 - Step 8: Create
 <br>Scroll down → select: **Create database** → Then wait 3-5 minutes
 
-![3-17](/images/5-Workshop/5.3-Implementation/3-17.png)
+![3-17](../../../images/5-Workshop/5.3-Implementation/3-17.png)
 
 [**Part 2: Open port database**]
 
@@ -181,7 +181,7 @@ Go to:
 - RDS → select DB
 - Click Security Group → **Edit inbound rules**
 
-![3-18](/images/5-Workshop/5.3-Implementation/3-18.png)
+![3-18](../../../images/5-Workshop/5.3-Implementation/3-18.png)
 
 Add:
 
@@ -191,7 +191,7 @@ Add:
 
 Or temporarily: 0.0.0.0/0 (for testing)
 
-![3-19](/images/5-Workshop/5.3-Implementation/3-19.png)
+![3-19](../../../images/5-Workshop/5.3-Implementation/3-19.png)
 
 [**Part 3: Connect from EC2**]
 
@@ -202,7 +202,7 @@ Example: ```mysql -h classic-groove-db.czuaak8esyxf.ap-southeast-2.rds.amazonaws
 
 &emsp; → Enter Password
 
-![3-20](/images/5-Workshop/5.3-Implementation/3-20.png)
+![3-20](../../../images/5-Workshop/5.3-Implementation/3-20.png)
 
 [**Part 4: Import database**]
 
@@ -291,39 +291,39 @@ When users upload images:
 - Bucket name: classic-groove-images 
 - Object Ownership: ACLs disabled (recommended) 
 
-![3-21-1](/images/5-Workshop/5.3-Implementation/3-21-1.png)
-![3-21-2](/images/5-Workshop/5.3-Implementation/3-21-2.png)
+![3-21-1](../../../images/5-Workshop/5.3-Implementation/3-21-1.png)
+![3-21-2](../../../images/5-Workshop/5.3-Implementation/3-21-2.png)
 
 3. Other configurations: 
 - Bucket Versioning: Disable 
 - Encryption type: Default (SSE-S3) 
 - Bucket Key: Disable 
 
-![3-22-1](/images/5-Workshop/5.3-Implementation/3-22-1.png)
-![3-22-2](/images/5-Workshop/5.3-Implementation/3-22-2.png)
+![3-22-1](../../../images/5-Workshop/5.3-Implementation/3-22-1.png)
+![3-22-2](../../../images/5-Workshop/5.3-Implementation/3-22-2.png)
 
 4. Click **Create bucket**
 
-![3-23](/images/5-Workshop/5.3-Implementation/3-23.png)
+![3-23](../../../images/5-Workshop/5.3-Implementation/3-23.png)
 
 
 **Step 2: Grant public access**
 
 Go to bucket → **Permissions** → **Bucket policy** (Permissions tab of bucket classic-groove-images)
 
-![3-24](/images/5-Workshop/5.3-Implementation/3-24.png)
+![3-24](../../../images/5-Workshop/5.3-Implementation/3-24.png)
 
 Click Edit
 
-![3-25](/images/5-Workshop/5.3-Implementation/3-25.png)
+![3-25](../../../images/5-Workshop/5.3-Implementation/3-25.png)
 
 Paste the following policy:
 
-![3-26](/images/5-Workshop/5.3-Implementation/3-26.png)
+![3-26](../../../images/5-Workshop/5.3-Implementation/3-26.png)
 
 Click **Save changes**, then the system will display
 
-![3-27](/images/5-Workshop/5.3-Implementation/3-27.png)
+![3-27](../../../images/5-Workshop/5.3-Implementation/3-27.png)
 
 **Step 3:** Create AWS Key
 
@@ -331,27 +331,27 @@ Click **Save changes**, then the system will display
 2. Select User → click Create User 
 3. Enter User name → click Next 
 
-![3-28](/images/5-Workshop/5.3-Implementation/3-28.png)
+![3-28](../../../images/5-Workshop/5.3-Implementation/3-28.png)
 
 4. Select Attach policies directly → Search and select approproate policies.
 
-![3-29-1](/images/5-Workshop/5.3-Implementation/3-29-1.png)
-![3-29-2](/images/5-Workshop/5.3-Implementation/3-29-2.png)
+![3-29-1](../../../images/5-Workshop/5.3-Implementation/3-29-1.png)
+![3-29-2](../../../images/5-Workshop/5.3-Implementation/3-29-2.png)
 
 5. Click **Create user**
 
-![3-30](/images/5-Workshop/5.3-Implementation/3-30.png)
+![3-30](../../../images/5-Workshop/5.3-Implementation/3-30.png)
 
 6. Open the created user
 - Go to Security credentials tab
 - Click **Create access key**, then select **Application running outside AWS**
 - Click Next → Create
 
-![3-31](/images/5-Workshop/5.3-Implementation/3-31.png)
+![3-31](../../../images/5-Workshop/5.3-Implementation/3-31.png)
 
 - Copy AWS key (displayed only once)
 
-![3-32](/images/5-Workshop/5.3-Implementation/3-32.png)
+![3-32](../../../images/5-Workshop/5.3-Implementation/3-32.png)
 
 **Bước 4: Connect PHP and Amazon S3**
 1. Install AWS SDK for PHP
@@ -420,11 +420,11 @@ Mở: http://13.211.255.184/test.html
 
 Select image and upload
 
-![3-33](/images/5-Workshop/5.3-Implementation/3-33.png)
+![3-33](../../../images/5-Workshop/5.3-Implementation/3-33.png)
 
 Expacted result: A URL is returned https://classic-groove-images.s3.ap-southeast-2.amazonaws.com/xxx.jpg
 
-![3-34](/images/5-Workshop/5.3-Implementation/3-34.png)
+![3-34](../../../images/5-Workshop/5.3-Implementation/3-34.png)
 
 **Bước 5: Gắn upload S3 vào project classic-groove**
 
@@ -528,7 +528,7 @@ Conclusion: User upload → S3 stores file → PHP retrieves URL → DB stores U
 
 Successful upload URL: https://classic-groove-images.s3.ap-southeast-2.amazonaws.com/xxx.jpg
 
-![3-35](/images/5-Workshop/5.3-Implementation/3-35.png)
+![3-35](../../../images/5-Workshop/5.3-Implementation/3-35.png)
 
 
 **Summary S3:** The system successfully integrates Amazon S3 for image storage. Uploaded images are stored as objects in S3 and accessed via public URLs. This approach eliminates local server storage, improves scalability, and enhances performance for handling static assets in the system.
