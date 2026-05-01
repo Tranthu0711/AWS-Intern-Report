@@ -1,4 +1,4 @@
-baseURL = "https://tranthu0711.github.io/AWS-Intern-Report/" // replace with your github.io page
+baseURL = "https://tranthu0711.github.io/AWS-Intern-Report/" 
 
 relativeURLs = false
 canonifyURLs = false
