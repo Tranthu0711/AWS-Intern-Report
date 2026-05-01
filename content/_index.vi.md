@@ -25,7 +25,7 @@ weight: 1
 
 &emsp; **Thời gian thực tập:** Từ ngày 09/03/2026 đến ngày 02/05/2026
 
-![avatar](../images/avatar.png)
+![Trần Thị Thu](../images/avatar.png)
 
 
 

@@ -27,7 +27,7 @@ chapter: false
 
 &emsp; **Internship Duration:** From 09/03/2026 to 02/05/2026
 
-![avatar](../images/avatar.png)
+![Thu Tran](images/avatar.png)
 
 ### Report Content
 
